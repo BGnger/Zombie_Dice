@@ -1,8 +1,8 @@
  import java.util.Random;
  public class Die {
 
-     public String[] colorChoice = {"green", "red", "yellow"};
-     public String color = "";
+     private String[] colorChoice = {"green", "red", "yellow"};
+     private String color = "";
 
      public Die() {
          Random rand = new Random();
