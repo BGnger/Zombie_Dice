@@ -42,7 +42,7 @@ public class Game {
                     String continueTurn = scanner.nextLine();
                     if (continueTurn.equalsIgnoreCase("quit")) {
                         player1Turn = false;
-                        player1.setBrains(getSurvivors());
+                        player1.setBrains(player1.getSurvivors());
                         player1.setSurvivors(0);
                     }
                     if (player1.getBrains() >= 13) {
@@ -55,14 +55,14 @@ public class Game {
 //                }
                 }
                 while (!player1Turn && gameRunning) {
-                    System.out.println(player2.getName);
-                    System.out.println(player2.getBrains);
-                    System.out.println(player2.getSurvivors);
-                    System.out.println(player2.getShots);
+                    System.out.println(player2.getName());
+                    System.out.println(player2.getBrains());
+                    System.out.println(player2.getSurvivors());
+                    System.out.println(player2.getShots());
                     String continueTurn = scanner.nextLine();
                     if (continueTurn.equalsIgnoreCase("quit")) {
                         player1Turn = true;
-                        player2.setBrains(getSurvivors());
+                        player2.setBrains(player2.getSurvivors());
                         player2.setSurvivors(0);
                     }
                     if (player2.getBrains() >= 13) {
