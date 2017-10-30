@@ -7,12 +7,17 @@
      public Die() {
 
      }
+
   public void dieRoll(Player player){
        Random rand = new Random();
        int randNum = rand.nextInt(6) + 1;
        if(this.color.contentEquals("green")){
            if(randNum <= 3){
                 player.setSurvivors(player.getSurvivors++);
+           }else if(randNum <= 5){
+
+           }else if(randNum == 6){
+               player.setShots(player.getShots++);
            }
        }
   }
