@@ -24,5 +24,7 @@
           this.color = "green";
       }
   }
+
+  public String getColor(){return color;}
  }
 
