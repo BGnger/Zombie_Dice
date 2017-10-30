@@ -1,5 +1,9 @@
 public class Player {
 
+    Player(){
+        
+    }
+
     private String Name = "";
     private int Shots = 0;
     private int Brains = 0;
