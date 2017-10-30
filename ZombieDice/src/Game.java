@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Game {
-    private static void displayGame() {
+    public void displayGame() {
         boolean playAgain = true;
         while (playAgain) {
             System.out.println("Welcome to Zombie Dice!");
@@ -15,13 +15,13 @@ public class Game {
 
             System.out.println("Player 1, please enter your name!");
             player1.setName(scanner.nextLine());
-            if (player1.name.equals("")) {
+            if (player1.getName().equals("")) {
                 player1.setName("Player1");
             }
 
             System.out.println("Player 2, please enter your name!");
             player2.setName(scanner.nextLine());
-            if (player2.name.equals("")) {
+            if (player2.getName().equals("")) {
                 player2.setName("Player2");
             }
 
