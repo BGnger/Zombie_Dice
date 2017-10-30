@@ -1,7 +1,7 @@
 public class Player {
 
-    Player(){
-        
+    public Player(){
+
     }
 
     private String Name = "";

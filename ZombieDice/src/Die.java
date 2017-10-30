@@ -13,11 +13,11 @@
        int randNum = rand.nextInt(6) + 1;
        if(this.color.contentEquals("green")){
            if(randNum <= 3){
-                player.setSurvivors(player.getSurvivors++);
+                player.setSurvivors(player.getSurvivors() + 1);
            }else if(randNum <= 5){
 
            }else if(randNum == 6){
-               player.setShots(player.getShots++);
+               player.setShots(player.getShots() + 1);
            }
        }
   }
