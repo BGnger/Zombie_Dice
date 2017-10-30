@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ZombieDice/ZombieDice.iml" filepath="$PROJECT_DIR$/ZombieDice/ZombieDice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ZombieDiceProject/ZombieDiceProject.iml" filepath="$PROJECT_DIR$/ZombieDiceProject/ZombieDiceProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/Zombie_Dice.iml" filepath="$PROJECT_DIR$/Zombie_Dice.iml" />
     </modules>
   </component>

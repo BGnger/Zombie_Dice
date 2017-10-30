@@ -49,10 +49,6 @@ public class Game {
                         gameRunning = false;
                         player1Turn = false;
                     }
-//                if (shots>=3) {
-//                    player1Turn = false;
-//                    shots = 0;
-//                }
                 }
                 while (!player1Turn && gameRunning) {
                     System.out.println(player2.getName);
@@ -68,10 +64,6 @@ public class Game {
                     if (player2.getBrains() >= 13) {
                         gameRunning = false;
                     }
-//                if (shots>=3) {
-//                    player1Turn = true;
-//                    shots = 0;
-//                }
                 }
             }
             System.out.println("Do you want to play again? [Y/N]");
