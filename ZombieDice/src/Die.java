@@ -5,15 +5,7 @@
      private String color = "";
 
      public Die() {
-         Random rand = new Random();
-         int randNumber = rand.nextInt(100) + 1;
-         if (randNumber <= 46) {
-             color = colorChoice[0];
-         } else if (randNumber <= 77) {
-             color = colorChoice[1];
-         } else if (randNumber <= 100) {
-             color = colorChoice[2];
-         }
+
      }
   public void dieRoll(Player player){
        Random rand = new Random();
@@ -23,6 +15,14 @@
                 player.setSurvivors(player.getSurvivors++);
            }
        }
+  }
+
+  public void setColor(String color){
+      if(color.equalsIgnoreCase("green") || color.equalsIgnoreCase("yellow") || color.equalsIgnoreCase("red")) {
+          this.color = color;
+      }else{
+          this.color = "green";
+      }
   }
  }
 
