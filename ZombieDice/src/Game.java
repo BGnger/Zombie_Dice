@@ -32,10 +32,10 @@ public class Game {
 
             while (gameRunning) {
                 while (player1Turn) {
-                    System.out.println(player1.getName);
-                    System.out.println(player1.getBrains);
-                    System.out.println(player1.getSurvivors);
-                    System.out.println(player1.getShots);
+                    System.out.println(player1.getName());
+                    System.out.println(player1.getBrains());
+                    System.out.println(player1.getSurvivors());
+                    System.out.println(player1.getShots());
                     Die die1 = new Die();
                     Die die2 = new Die();
                     Die die3 = new Die();
