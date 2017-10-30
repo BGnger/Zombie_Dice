@@ -15,7 +15,7 @@
              color = colorChoice[2];
          }
      }
-  public int dieRoll(Player player){
+  public void dieRoll(Player player){
        Random rand = new Random();
        int randNum = rand.nextInt(6) + 1;
        if(this.color.contentEquals("green")){
