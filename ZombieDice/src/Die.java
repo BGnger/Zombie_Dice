@@ -20,7 +20,7 @@
        int randNum = rand.nextInt(6) + 1;
        if(this.color.contentEquals("green")){
            if(randNum <= 3){
-                //whatever the statistic the three is.
+                player.setSurvivors(player.getSurvivors++);
            }
        }
   }
