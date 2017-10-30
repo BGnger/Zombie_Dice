@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Game {
-    private static void displayGame() {
+    public void displayGame() {
         boolean playAgain = true;
         while (playAgain) {
             System.out.println("Welcome to Zombie Dice!");
