@@ -1,22 +1,15 @@
 import java.util.Random;
 
 public class Cup {
-    public static Die[] produceDie (int numDice){
-        int[] ColorProbability = new int[numDice];
-        Die[] dice = new Die[numDice];
-        for (int i = 0; i < numDice; i++) {
-            Random color = new Random();
-            int Color = color.nextInt(100) + 1;
-            ColorProbability[i] = Color;
-            if (ColorProbability[i] <= 46) {
-                dice[i].setColor("Green");
-            } else if (ColorProbability[i] <= 77) {
-                dice[i].setColor("Yellow");
-            } else if (ColorProbability[i] <= 100) {
-                dice[i].setColor("Red");
-            }
-
+    public void produceDie(Die die) {
+        Random rand = new Random();
+        int colorInt = rand.nextInt(100) + 1;
+        if (colorInt<=46) {
+            die.setColor("green");
+        } else if (colorInt<=77) {
+            die.setColor("yellow");
+        } else if (colorInt<=100) {
+            die.setColor("red");
         }
-        return dice;
     }
 }
