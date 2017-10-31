@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Cup {
-    public static Die[] cup(int numDice){
+    public static Die[] produceDie (int numDice){
         int[] ColorProbability = new int[numDice];
         Die[] dice = new Die[numDice];
         for (int i = 0; i < numDice; i++) {
