@@ -9,24 +9,16 @@
      }
 
   public void dieRoll(Player player){
-       Random rand = new Random();
-       int randNum = rand.nextInt(6) + 1;
+       int[] green = {3, 5, 6};
+       int[] yellow = {2, 4, 6};
+       int[] red = {1, 3, 6};
+
        if(this.color.equalsIgnoreCase("green")){
-           if(randNum <= 3){
-                player.setSurvivors(player.getSurvivors() + 1);
-           }else if(randNum <= 5){
-
-           }else if(randNum == 6){
-               player.setShots(player.getShots() + 1);
-           }
+           rollColoredDie(green, player);
        }else if(this.color.equalsIgnoreCase("yellow")){
-           if(randNum <= 2){
-               player.setSurvivors(player.getSurvivors() + 1);
-           }else if(randNum <= 4){
-
-           }else if(randNum <= 6){
-               player.setShots(player.getShots() + 1);
-           }
+           rollColoredDie(yellow, player);
+       }else if(this.color.equalsIgnoreCase("red")){
+            rollColoredDie(red, player);
        }
   }
 
@@ -39,5 +31,17 @@
   }
 
   public String getColor(){return color;}
+
+  private void rollColoredDie(int[] stats, Player player){
+      Random rand = new Random();
+      int randNum = rand.nextInt(6) + 1;
+      if(randNum <= stats[0]){
+          player.setSurvivors(player.getSurvivors() + 1);
+      }else if(randNum <= stats[1]){
+
+      }else if(randNum <= stats[2]){
+          player.setShots(player.getShots() + 1);
+      }
+  }
  }
 
