@@ -21,6 +21,21 @@
             dieRoll(red, player);
        }
   }
+     // depending on the int[] called out by the rollColoredDie method, the Color Die will be rolled with different values
+     // based on what the variable color will be.
+     private void dieRoll(int[] stats, Player player){
+         Random rand = new Random();
+         int randNum = rand.nextInt(6) + 1;
+         if(randNum <= stats[0]){
+             player.setSurvivors(player.getSurvivors() + 1);
+             this.symbol = "Brain";
+         }else if(randNum <= stats[1]){
+             this.symbol = "Runner";
+         }else if(randNum <= stats[2]){
+             player.setShots(player.getShots() + 1);
+             this.symbol = "Shot";
+         }
+     }
 
   public void setColor(String color){
       if(color.equalsIgnoreCase("green") || color.equalsIgnoreCase("yellow") || color.equalsIgnoreCase("red")) {
@@ -32,21 +47,7 @@
 
   public String getColor(){return color;}
 
-  // depending on the int[] called out by the rollColoredDie method, the Color Die will be rolled with different values
-  // based on what the variable color will be.
-  private void dieRoll(int[] stats, Player player){
-      Random rand = new Random();
-      int randNum = rand.nextInt(6) + 1;
-      if(randNum <= stats[0]){
-          player.setSurvivors(player.getSurvivors() + 1);
-          this.symbol = "Brain";
-      }else if(randNum <= stats[1]){
-        this.symbol = "Runner";
-      }else if(randNum <= stats[2]){
-          player.setShots(player.getShots() + 1);
-          this.symbol = "Shot";
-      }
-  }
+
 
   public String getSymbol(){return symbol;}
  }
