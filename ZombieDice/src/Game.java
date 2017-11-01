@@ -29,6 +29,7 @@ public class Game {
                         dice[i] = die;
                     }
                     System.out.println("It is "+players[x].getName()+"'s turn!");
+                    System.out.println("So far, you have currently have "+players[x]+" brains");
                     turn = true;
                     while (turn) {
                         for (int i = 0; i < 3; i++) {
