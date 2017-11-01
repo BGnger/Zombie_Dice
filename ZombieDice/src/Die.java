@@ -1,7 +1,6 @@
  import java.util.Random;
  public class Die {
 
-     private String[] colorChoice = {"green", "red", "yellow"};
      private String color = "";
      private String symbol = "";
 
