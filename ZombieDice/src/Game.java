@@ -41,18 +41,23 @@ public class Game {
                             System.out.println("Dice number "+(i + 1)+" is a "+dice[i].getColor()+" "+dice[i].getSymbol());
                         }
                         System.out.println("So far this turn, you have "+players[x].getSurvivors()+" survivors cornered and "+players[x].getShots()+" shots taken");
-                        System.out.println("Would you like to roll again? [Y/N]");
-                        if (scanner.nextLine().equalsIgnoreCase("N")) {
-                            players[x].setBrains(players[x].getSurvivors());
-                            players[x].setShots(0);
-                            players[x].setSurvivors(0);
-                            System.out.println("You now have a total of "+players[x].getBrains()+" brains");
+                        if (players[x].getShots()>=3) {
+                            System.out.println("You have been shot 3 or more time! All the survivor's you cornered this turn have gotten away!");
                             turn = false;
-                        }
-                        if (players[x].getBrains()>=13) {
-                            System.out.println("Congratulations "+players[x].getName()+"! You win!");
-                            gameRunning = false;
-                            x=players.length;
+                        } else {
+                            System.out.println("Would you like to roll again? [Y/N]");
+                            if (scanner.nextLine().equalsIgnoreCase("N")) {
+                                players[x].setBrains(players[x].getSurvivors());
+                                players[x].setShots(0);
+                                players[x].setSurvivors(0);
+                                System.out.println("You now have a total of " + players[x].getBrains() + " brains");
+                                turn = false;
+                            }
+                            if (players[x].getBrains() >= 13) {
+                                System.out.println("Congratulations " + players[x].getName() + "! You win!");
+                                gameRunning = false;
+                                x = players.length;
+                            }
                         }
                     }
                 }
