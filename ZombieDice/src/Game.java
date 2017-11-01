@@ -47,7 +47,7 @@ public class Game {
                         } else {
                             System.out.println("Would you like to roll again? [Y/N]");
                             if (scanner.nextLine().equalsIgnoreCase("N")) {
-                                players[x].setBrains(players[x].getSurvivors());
+                                players[x].setBrains(players[x].getBrains()+players[x].getSurvivors());
                                 players[x].setShots(0);
                                 players[x].setSurvivors(0);
                                 System.out.println("You now have a total of " + players[x].getBrains() + " brains");
