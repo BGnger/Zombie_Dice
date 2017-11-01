@@ -12,22 +12,11 @@ public class Game {
             Player[] players = new Player[2];
             for (int i=0;i<players.length;i++) {
                 Player player = new Player();
+                System.out.println("Player "+(i+1)+" please enter your name");
+                player.setName(scanner.nextLine());
                 players[i] = player;
             }
             Die[] dice = new Die[3];
-
-
-            System.out.println("Player 1, please enter your name!");
-            player1.setName(scanner.nextLine());
-            if (player1.getName().equals("")) {
-                player1.setName("Player1");
-            }
-
-            System.out.println("Player 2, please enter your name!");
-            player2.setName(scanner.nextLine());
-            if (player2.getName().equals("")) {
-                player2.setName("Player2");
-            }
 
             boolean gameRunning = true;
             boolean turn;
