@@ -1,15 +1,13 @@
 import java.util.Scanner;
 
 public class Game {
-    public void displayGame() {
+    public void displayGame(int numPlayers) {
         boolean playAgain = true;
         while (playAgain) {
             System.out.println("Welcome to Zombie Dice!");
 
             Scanner scanner = new Scanner(System.in);
-            Player player1 = new Player();
-            Player player2 = new Player();
-            Player[] players = new Player[2];
+            Player[] players = new Player[numPlayers];
             for (int i=0;i<players.length;i++) {
                 Player player = new Player();
                 System.out.println("Player "+(i+1)+" please enter your name");
