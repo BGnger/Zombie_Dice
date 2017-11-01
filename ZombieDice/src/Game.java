@@ -41,9 +41,13 @@ public class Game {
                             System.out.println("Dice number "+(i + 1)+" is a "+dice[i].getColor()+" "+dice[i].getSymbol());
                         }
                         System.out.println("So far this turn, you have "+players[x].getSurvivors()+" survivors cornered and "+players[x].getShots()+" shots taken");
+                        //delete the above soutt if you like how the things below look
+                        System.out.println("");
+                        System.out.println(players[x].getName()+" has "+players[x].getSurvivors()+" survivors");
                         System.out.println("");
                         System.out.println(players[x].getName()+" has "+players[x].getShots()+" shots");
                         System.out.println("");
+                        //end of edit
                         if (players[x].getShots()>=3) {
                             System.out.println("You have been shot 3 or more time! All the survivor's you cornered this turn have gotten away!");
                             turn = false;
