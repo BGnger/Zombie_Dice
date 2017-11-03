@@ -9,35 +9,34 @@ public class Player {
     private int Brains = 0;
     private int Survivors = 0;
 
+    public void   setName(String A) {
+        Name = A;
+    }
     public String getName(){
         return Name;
     }
 
-    public int getBrains() {
+    public void   setBrains(int brains) {
+        Brains = brains;
+    }
+    public int    getBrains() {
         return Brains;
     }
 
-    public int getSurvivors() {
+    public void   setSurvivors(int survivors) {
+        Survivors = survivors;
+    }
+    public int    getSurvivors() {
         return Survivors;
     }
 
-    public int getShots() {
-        return Shots;
-    }
-    public void setName(String A) {
-        Name = A;
-    }
-
-    public void setBrains(int brains) {
-        Brains = brains;
-    }
-
-    public void setShots(int shots) {
+    public void   setShots(int shots) {
         Shots = shots;
     }
-
-    public void setSurvivors(int survivors) {
-        Survivors = survivors;
+    public int    getShots() {
+        return Shots;
     }
+
+
 }
 
