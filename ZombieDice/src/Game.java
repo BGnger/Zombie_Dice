@@ -1,14 +1,15 @@
 import java.util.Scanner;
 
 public class Game {
-    public void playZombieDice(int numPlayers) {
+    public void playZombieDice() {
 
 //This while loop is responsible for restarting the game should the players want to play again at the end
         boolean playAgain = true;
         while (playAgain) {
             System.out.println("Welcome to Zombie Dice!");
-
             Scanner scanner = new Scanner(System.in);
+
+            int numPlayers = determineNumPlayers();
 
 //This section creates the player array and asks each player to enter their names
             Player[] players = new Player[numPlayers];
@@ -99,14 +100,21 @@ public class Game {
             }
         }
     }
+
+//This method is used to determine the number of players for each iteration of the game
     public int determineNumPlayers() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("How many players will be in the game?");
-        try {
-            return Integer.parseInt(scanner.nextLine());
-        } catch (Exception e) {
-            System.out.println("That is not a valid number of players! The game will default to 2 players!");
-            return 2;
+        int numPlayers = 0;
+        boolean checkNumPlayers = true;
+        while (checkNumPlayers) {
+            try {
+                System.out.println("How many players will be in the game?");
+                numPlayers = Integer.parseInt(scanner.nextLine());
+                checkNumPlayers = false;
+            } catch (Exception e) {
+                System.out.println("That is not a valid number of players!");
+            }
         }
+        return numPlayers;
     }
 }
