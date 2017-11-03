@@ -41,8 +41,9 @@ public class Game {
                     }
 
                     System.out.println("");
+                    System.out.println("");
                     System.out.println("It is "+players[x].getName()+"'s turn!");
-                    System.out.println("So far, you have currently have "+players[x].getBrains()+" brains");
+                    System.out.println("So far, you currently have "+players[x].getBrains()+" brains");
                     System.out.println("");
                     turn = true;
 
