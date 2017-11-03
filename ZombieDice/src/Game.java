@@ -31,12 +31,13 @@ public class Game {
 //This for loop determines the current players turn
                 for (int x = 0; x < players.length; x++) {
 
-//This for loop reinitializes the dice
+//This for loop recreates the dice
                     for (int i = 0; i < 3; i++) {
                         Die die = new Die();
                         dice[i] = die;
                     }
 
+                    System.out.println("");
                     System.out.println("It is "+players[x].getName()+"'s turn!");
                     System.out.println("So far, you have currently have "+players[x].getBrains()+" brains");
                     System.out.println("");
@@ -108,13 +109,18 @@ public class Game {
         boolean checkNumPlayers = true;
         while (checkNumPlayers) {
             try {
-                System.out.println("How many players will be in the game?");
-                numPlayers = Integer.parseInt(scanner.nextLine());
-                checkNumPlayers = false;
+                System.out.println("How many players will be in the game? (Minimum of 2)");
+                int temp = Integer.parseInt(scanner.nextLine());
+                if (temp>=2) {
+                    numPlayers = temp;
+                    checkNumPlayers = false;
+                } else {
+                    System.out.println("There must be at least 2 players!");
+                }
             } catch (Exception e) {
                 System.out.println("That is not a valid number of players!");
             }
         }
-        return numPlayers;
+            return numPlayers;
     }
 }
