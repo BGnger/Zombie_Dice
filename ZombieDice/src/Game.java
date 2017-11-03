@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Game {
-    public void displayGame(int numPlayers) {
+    public void playZombieDice(int numPlayers) {
 
 //This while loop is responsible for restarting the game should the players want to play again at the end
         boolean playAgain = true;
@@ -37,7 +37,8 @@ public class Game {
                     }
 
                     System.out.println("It is "+players[x].getName()+"'s turn!");
-                    System.out.println("So far, you have currently have "+players[x]+" brains");
+                    System.out.println("So far, you have currently have "+players[x].getBrains()+" brains");
+                    System.out.println("");
                     turn = true;
 
 //This while loops handles what happens during each players turn
@@ -55,14 +56,18 @@ public class Game {
                             System.out.println("Dice number "+(i + 1)+" is a "+dice[i].getColor()+" "+dice[i].getSymbol());
                         }
 
+                        System.out.println("");
                         System.out.println("So far this turn, you have "+players[x].getSurvivors()+" survivors cornered and "+players[x].getShots()+" shots taken");
-                        System.out.println("");
-                        System.out.println(players[x].getName()+" has "+players[x].getShots()+" shots");
-                        System.out.println("");
+//                        System.out.println("");
+//                        System.out.println(players[x].getName()+" has "+players[x].getShots()+" shots");
+//                        System.out.println("");
 
 //This if/else statement determines if the player has been shot 3+ times and ends their turn if they have been
                         if (players[x].getShots()>=3) {
-                            System.out.println("You have been shot 3 or more time! All the survivor's you cornered this turn have gotten away!");
+                            players[x].setShots(0);
+                            players[x].setSurvivors(0);
+                            System.out.println("You have been shot 3 or more times! All the survivors you cornered this turn have gotten away!");
+                            System.out.println("");
                             turn = false;
                         } else {
                             System.out.println("Would you like to roll again? [Y/N]");
@@ -71,6 +76,7 @@ public class Game {
                                 players[x].setShots(0);
                                 players[x].setSurvivors(0);
                                 System.out.println("You now have a total of " + players[x].getBrains() + " brains");
+                                System.out.println("");
                                 turn = false;
                             }
 
@@ -91,6 +97,16 @@ public class Game {
             if (scanner.nextLine().equalsIgnoreCase("N")) {
                 playAgain = false;
             }
+        }
+    }
+    public int determineNumPlayers() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How many players will be in the game?");
+        try {
+            return Integer.parseInt(scanner.nextLine());
+        } catch (Exception e) {
+            System.out.println("That is not a valid number of players! The game will default to 2 players!");
+            return 2;
         }
     }
 }

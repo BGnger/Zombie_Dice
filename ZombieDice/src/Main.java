@@ -1,7 +1,8 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args){
         Game play = new Game();
-        play.displayGame(2);
-
+        play.playZombieDice(play.determineNumPlayers());
     }
 }
