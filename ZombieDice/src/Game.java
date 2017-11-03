@@ -17,6 +17,9 @@ public class Game {
                 Player player = new Player();
                 System.out.println("Player "+(i+1)+" please enter your name");
                 player.setName(scanner.nextLine());
+                if (player.getName().equalsIgnoreCase("")) {
+                    player.setName("Player "+(i+1));
+                }
                 players[i] = player;
             }
 
